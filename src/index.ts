@@ -1,13 +1,13 @@
 import express, { Request, Response } from "express";
-import serverless from "serverless-http";
 
 const app = express();
+const port = 3000;
 
-app.use(express.json());
-
-// Suas rotas aqui
-app.get("/", (req: Request, res: Response) => {
-  res.status(200).json({ message: "API está no ar!" });
+app.get("/teste", (req: Request, res: Response) => {
+  res.send("Hello World!");
 });
 
-export default serverless(app);
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
+
